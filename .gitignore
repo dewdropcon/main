@@ -1,0 +1,13 @@
+# General
+.DS_Store
+Thumbs.db
+*.tmp
+*~
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Project-specific
+GEMINI.md

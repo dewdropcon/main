@@ -1,0 +1,958 @@
+:root {
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-s: 0.5rem;   /* 8px */
+  --spacing-m: 1rem;     /* 16px */
+  --spacing-l: 1.5rem;   /* 24px */
+  --spacing-xl: 2.5rem;  /* 40px */
+  --spacing-xxl: 4rem;   /* 64px */
+
+  --border-radius-s: 5px;
+  --border-radius-m: 10px;
+
+  --font-size-s: 0.875rem; /* 14px */
+  --font-size-m: 1rem;     /* 16px */
+  --font-size-l: 1.25rem;  /* 20px */
+  --font-size-xl: 1.5rem;  /* 24px */
+  --font-size-xxl: 2.5rem; /* 40px */
+  --font-size-xxxl: 4rem;  /* 64px */
+
+  --line-height-s: 1.2;
+  --line-height-m: 1.6;
+
+  --color-primary: #0056b3;
+  --color-primary-dark: #004085;
+  --color-text: #333;
+  --color-background: #f8f8f8;
+  --color-white: #fff;
+  --color-dark: #222;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-display: swap;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8; /* Lighter background */
+    color: #333;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-rendering: optimizeLegibility; /* Improve font rendering */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.container {
+    width: 90%; /* Slightly wider container */
+    max-width: 1200px; /* Increased max width for large screens */
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* Header Styles */
+header {
+    background: #222; /* Darker header */
+    color: #fff;
+    padding: var(--spacing-m) 0; /* Adjusted padding */
+    min-height: 4.375rem;
+    border-bottom: var(--color-primary) 4px solid; /* Thicker border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* More pronounced shadow */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure header is on top */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: var(--font-size-m);
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+header li {
+    display: inline;
+    padding: 0 var(--spacing-m); /* Adjusted padding */
+}
+
+header #branding {
+    float: left;
+    display: flex; /* Use flexbox for branding */
+    align-items: center;
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: var(--font-size-xl); /* Larger branding text */
+}
+
+header #branding img {
+    height: 50px; /* Ensure logo size is consistent */
+    vertical-align: middle;
+    margin-right: var(--spacing-s);
+}
+
+header nav {
+    float: right;
+    margin-top: var(--spacing-s); /* Adjust alignment with branding */
+}
+
+header .highlight, header .current a {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #0056b3;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 31.25rem; /* Taller hero */
+    background: #333 url('./images/front_wide_view_paint_job.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative; /* For overlay */
+    padding: var(--spacing-l); /* Ensure padding on small screens */
+}
+
+#hero::before { /* Dark overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+}
+
+#hero .container {
+    position: relative; /* Bring content above overlay */
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: var(--font-size-xxxl); /* Larger hero title */
+    margin-bottom: var(--spacing-m);
+    line-height: 1.1;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8); /* More pronounced text shadow */
+}
+
+#hero p {
+    font-size: var(--font-size-xl); /* Larger hero paragraph */
+    margin-bottom: var(--spacing-l);
+    max-width: 800px; /* Wider paragraph */
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.button {
+  display: inline-block;
+  padding: var(--spacing-s) var(--spacing-l);
+  font-size: var(--font-size-m);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary);
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section General Styling */
+section {
+    padding: var(--spacing-xxl) 0; /* More vertical padding for sections */
+    position: relative;
+}
+
+section h2 {
+    font-size: var(--font-size-xxl); /* Larger section titles */
+    color: #333;
+    text-align: center;
+    margin-bottom: var(--spacing-xl); /* More space below title */
+    position: relative;
+}
+
+section h2::after { /* Underline effect for titles */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 0.25rem;
+    background-color: #0056b3;
+    border-radius: 2px;
+}
+
+
+/* Welcome Section */
+#welcome {
+    background: #fff;
+    border-bottom: #eee 1px solid;
+}
+
+#welcome p {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    font-size: var(--font-size-l); /* Slightly larger text */
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0); /* Subtle gradient background */
+    border-bottom: #eee 1px solid;
+}
+
+#why-choose-us .container {
+    align-items: stretch; /* Ensure all items in a row have consistent heights */
+}
+
+.why-item {
+    display: inline-block;
+    width: 22%;
+    min-height: 15.625rem; /* Baseline height for consistency */
+    background: #fff;
+    padding: var(--spacing-xl) var(--spacing-l); /* More padding */
+    border-radius: var(--border-radius-m); /* More rounded corners */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* More prominent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid #eee; /* Subtle border */
+}
+
+.why-item:hover {
+    transform: translateY(-8px); /* More pronounced lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.why-item h3 {
+    color: #0056b3;
+    margin-bottom: var(--spacing-m);
+    font-size: var(--font-size-xl); /* Larger heading */
+}
+
+.why-item p {
+    font-size: var(--font-size-m);
+    line-height: 1.7;
+    color: #666;
+}
+
+/* Featured Services Section */
+#featured-services {
+    background: #fff;
+    border-bottom: #eee 1px solid;
+}
+
+#featured-services .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-l);
+    align-items: stretch; /* Ensure all items in a row have consistent heights */
+}
+
+.service-preview {
+    flex: 1;
+    min-width: 17.5rem;
+    max-width: 21.875rem;
+    min-height: 25rem; /* Baseline height for consistency, adjust as needed */
+    background: #fdfdfd;
+    padding: 0; /* Remove padding from container, add to inner content */
+    border-radius: var(--border-radius-m);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden; /* Hide overflowing image corners */
+    border: 1px solid #eee;
+}
+
+.service-preview:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.service-preview img {
+    width: 100%;
+    height: 13.75rem; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area */
+    object-position: center; /* Center the image within its content box */
+    margin-bottom: 0; /* Remove margin below image */
+    border-radius: 10px 10px 0 0; /* Rounded top corners for image */
+}
+
+/* General responsive image handling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+    margin: 0 auto; /* Center images horizontally */
+}
+
+.service-preview .content { /* New div for text content */
+    padding: var(--spacing-l);
+}
+
+.service-preview h3 {
+    color: #333;
+    margin-bottom: var(--spacing-s);
+    font-size: var(--font-size-xl); /* Larger heading */
+}
+
+.service-preview p {
+    font-size: var(--font-size-m);
+    margin-bottom: var(--spacing-m);
+    line-height: 1.7;
+    color: #666;
+}
+
+/* Call to Action Section */
+#cta {
+    padding: var(--spacing-xxl) 0; /* More padding */
+    background: #333;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to right, #333, #555); /* Subtle gradient */
+}
+
+#cta h2 {
+    margin-bottom: var(--spacing-l);
+    font-size: var(--font-size-xxxl); /* Larger CTA title */
+    color: #fff; /* Ensure white color */
+}
+
+#cta h2::after { /* White underline for CTA title */
+    background-color: #fff;
+}
+
+#cta p {
+    font-size: var(--font-size-l); /* Larger CTA paragraph */
+    margin-bottom: var(--spacing-xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #eee;
+}
+
+/* Footer Styles */
+footer {
+    padding: var(--spacing-l); /* More padding */
+    color: #fff;
+    background-color: #222; /* Darker footer */
+    text-align: center;
+    font-size: var(--font-size-s);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Shadow for footer */
+}
+
+/* Clearfix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    #hero h1 {
+        font-size: var(--font-size-xxxl);
+    }
+
+    #hero p {
+        font-size: var(--font-size-l);
+    }
+
+    section h2 {
+        font-size: var(--font-size-xxl);
+    }
+
+    #why-choose-us .container,
+    #featured-services .container {
+        gap: var(--spacing-m);
+    }
+
+    .why-item,
+    .service-preview {
+        min-width: 17.5rem;
+        max-width: 45%; /* Allow two items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    header #branding,
+    header nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header #branding h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    header #branding img {
+        height: 35px !important;
+    }
+
+    header nav ul li {
+        padding: 0 var(--spacing-s);
+    }
+
+    #hero h1 {
+        font-size: var(--font-size-xxxl);
+    }
+
+    #hero p {
+        font-size: var(--font-size-l);
+    }
+
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    section h2 {
+        font-size: var(--font-size-xxl);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    #welcome p,
+    #cta p {
+        font-size: var(--font-size-l);
+    }
+
+    #why-choose-us .container,
+    #featured-services .container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .why-item,
+    .service-preview {
+        width: 90%; /* Full width on small screens */
+        max-width: 25rem; /* Limit max width even when stacked */
+        margin-bottom: var(--spacing-m);
+    }
+
+    .service-preview img {
+        height: 11.25rem;
+    }
+
+    #cta h2 {
+        font-size: var(--font-size-xxl);
+    }
+}
+
+@media (max-width: 480px) {
+    header li {
+        display: block;
+        padding: var(--spacing-xs) 0;
+    }
+
+    #hero h1 {
+        font-size: var(--font-size-xxl);
+    }
+
+    #hero p {
+        font-size: var(--font-size-m);
+    }
+
+    section h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    #welcome p,
+    #cta p {
+        font-size: var(--font-size-m);
+    }
+
+    .why-item,
+    .service-preview {
+        width: 100%;
+    }
+
+    #cta h2 {
+        font-size: var(--font-size-xl);
+    }
+}
+/* Services Page Specific Styles */
+
+/* Page Hero for Services */
+#page-hero.services-hero {
+    min-height: 18.75rem; /* Shorter hero for inner pages */
+    background: #333 url('./images/drilling_walls_for_pipes.jpg') no-repeat center center/cover; /* Use a relevant image */
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: var(--spacing-l);
+}
+
+#page-hero.services-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#page-hero.services-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+#page-hero.services-hero h1 {
+    font-size: var(--font-size-xxxl);
+    margin-bottom: var(--spacing-s);
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+#page-hero.services-hero p {
+    font-size: var(--font-size-l);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Services Overview Section */
+#services-overview {
+    background: #fdfdfd;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    border-bottom: #eee 1px solid;
+}
+
+#services-overview h2 {
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-l);
+    color: #333;
+}
+
+#services-overview p {
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+    font-size: var(--font-size-l);
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Detailed Services Section */
+#detailed-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.service-category {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fff;
+	border-radius: 12px;
+	padding: 20px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+	max-width: 400px;
+	flex: 1 1 300px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-category:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-category img {
+	width: 100%;
+	max-width: 100%;
+	min-height: 200px;
+	border-radius: 10px;
+	object-fit: cover;
+	margin-bottom: 15px;
+}
+
+.service-details h3 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.service-details p {
+	font-size: 0.95rem;
+	margin-bottom: 10px;
+	color: #555;
+}
+
+.service-details ul {
+	text-align: left;
+	padding-left: 20px;
+	margin-bottom: 15px;
+}
+
+.service-details ul li {
+	margin-bottom: 5px;
+}
+
+/* Services CTA Section (reusing cta styles) */
+#services-cta {
+    background: linear-gradient(to right, #333, #555);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+    color: #fff;
+}
+
+#services-cta h2 {
+    color: #fff;
+    font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-m);
+}
+
+#services-cta h2::after {
+    background-color: #fff;
+}
+
+#services-cta p {
+    font-size: var(--font-size-l);
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #eee;
+}
+
+/* Media Queries for Services Page */
+@media (max-width: 992px) {
+    .service-category img {
+        max-width: 100%;
+        height: 15.625rem; /* Adjust height for smaller screens */
+        border-radius: 10px 10px 0 0;
+    }
+
+    .service-details {
+        padding: var(--spacing-l);
+        text-align: center;
+    }
+
+    .service-details ul {
+        text-align: left; /* Align list items left even if text is centered */
+        display: inline-block; /* Allow centering of the ul itself */
+    }
+}
+
+@media (max-width: 768px) {
+	#detailed-services {
+        gap: 30px;
+        padding: 30px 0;
+        flex-direction: column;
+        align-items: center;
+	}
+	
+	.service-category {
+		width: 90%;
+		max-width: 350px;
+		margin-bottom: 1.5rem;
+	}
+	
+	.service-details {
+		display: block !important;
+		padding: 10px !important;
+		text-align: center !important;
+	}
+	
+	
+	.service-details h3 {
+		font-size: 1.2rem;
+		margin: 8px 0;
+		color: #333;
+	}
+	
+	.service-details p {
+		font-size: 0.9rem;
+		line-height: 1.4;
+		color: #555;
+		margin-bottom: 10px;
+	}
+	
+	.service-details ul {
+		padding-left: 20px;
+		font-size: 0.9rem;
+		text-align: left;
+		margin-bottom: 15px;
+	}
+	
+	.service-details ul li {
+		margin-bottom: 5px;
+	}
+	
+	.button-primary {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+    #page-hero.services-hero h1 {
+        font-size: var(--font-size-xxl);
+    }
+
+    #page-hero.services-hero p {
+        font-size: var(--font-size-l);
+    }
+
+    #services-overview h2 {
+        font-size: var(--font-size-xxl);
+    }
+
+    .service-details h3 {
+        font-size: var(--font-size-xl);
+    }
+
+    #services-cta h2 {
+        font-size: var(--font-size-xxl);
+    }
+}
+
+@media (max-width: 480px) {
+    #page-hero.services-hero h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    #page-hero.services-hero p {
+        font-size: var(--font-size-m);
+    }
+
+    #services-overview h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .service-details {
+        padding: var(--spacing-l);
+    }
+
+    .service-details h3 {
+        font-size: var(--font-size-l);
+    }
+
+    .service-details ul li {
+        font-size: var(--font-size-s);
+    }
+
+    #services-cta h2 {
+            font-size: var(--font-size-xl);
+        }
+    }
+
+    /* Contact Page Specific Styles */
+    /* Page Hero for Contact */
+    #page-hero.contact-hero {
+        min-height: 18.75rem;
+        background: #333 url('./images/man_fixing_pipes.jpg') no-repeat center center/cover;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        padding: var(--spacing-l);
+    }
+
+    #page-hero.contact-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    #page-hero.contact-hero .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    #page-hero.contact-hero h1 {
+        font-size: var(--font-size-xxxl);
+        margin-bottom: var(--spacing-s);
+        line-height: 1.1;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    #page-hero.contact-hero p {
+        font-size: var(--font-size-l);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Contact Section */
+    #contact {
+        background: #fff;
+        padding: var(--spacing-xxl) 0;
+    }
+
+    #contact form {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fdfdfd;
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius-m);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid #eee;
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-l);
+    }
+
+    .form-group label {
+        display: block;
+        font-size: var(--font-size-l);
+        color: #333;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: var(--spacing-m);
+        border: 1px solid #ccc;
+        border-radius: var(--border-radius-s);
+        font-size: var(--font-size-m);
+        color: #555;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #0056b3;
+        box-shadow: 0 0 8px rgba(119, 170, 255, 0.5);
+    }
+
+    .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    #contact p {
+        font-size: var(--font-size-l);
+        line-height: 1.7;
+    }
+
+    /* Media Queries for Contact Page */
+    @media (max-width: 768px) {
+        #page-hero.contact-hero h1 {
+            font-size: var(--font-size-xxl);
+        }
+
+        #page-hero.contact-hero p {
+            font-size: var(--font-size-l);
+        }
+
+        #contact form {
+            padding: var(--spacing-l);
+        }
+    }
+
+    @media (max-width: 480px) {
+        #page-hero.contact-hero h1 {
+            font-size: var(--font-size-xl);
+        }
+
+        #page-hero.contact-hero p {
+            font-size: var(--font-size-m);
+        }
+
+        #contact form {
+            padding: var(--spacing-l);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: var(--spacing-s);
+        }
+    }
+.skip-to-content {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  z-index: 9999;
+}
+
+/* Smooth fade + slide */
+section, .service-preview, .why-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar shrink animation */
+header.header-shrink {
+    padding: 8px 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    backdrop-filter: blur(8px);
+}

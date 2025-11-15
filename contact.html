@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us - DEW Drop Construction Company</title>
+<link href="images/logo(white background).png" rel="icon" type="image/png"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+/* Contact page specific styles */
+.contact-hero {
+  background: url('images/IMG-20251115-WA0008.webp') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  border-bottom: 2px solid #eee;
+}
+
+#main-content {
+padding: 50px 20px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007acc;
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button.button-primary {
+  display: inline-block;
+  background-color: #007acc;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.button-primary:hover {
+  background-color: #005fa3;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.contact-info a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<a class="skip-to-content" href="#main-content">Skip to main content</a>
+
+<header>
+<div class="container">
+<div id="branding">
+<img src="images/logo(transparent backgroung).png" alt="DEW Drop Construction Logo" style="height:50px; margin-right:10px;"/>
+<h1><span class="highlight">DEW Drop</span> Construction</h1>
+</div>
+<nav aria-label="Main navigation">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li class="current"><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="contact-hero" id="page-hero">
+<div class="container">
+<h1>Get in Touch</h1>
+<p>We're here to help with any questions you may have.</p>
+</div>
+</section>
+
+<section id="main-content">
+<div class="container">
+<h2 style="text-align:center; margin-bottom:30px;">Contact Us</h2>
+
+<form action="https://formspree.io/f/xovywjne" method="POST">
+<div class="form-group">
+<label for="name">Name:</label>
+<input id="name" name="name" type="text" placeholder="Your Name" required/>
+</div>
+
+<div class="form-group">
+<label for="email">Email:</label>
+<input id="email" name="email" type="email" placeholder="your.email@example.com" required/>
+</div>
+
+<div class="form-group">
+<label for="message">Message:</label>
+<textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+</div>
+
+<button type="submit" class="button button-primary">Send Message</button>
+</form>
+
+<div class="contact-info">
+<p>Phone: <a href="tel:+263716988241">+263 71 6988241</a> | Email: <a href="mailto:info@dewdropconstruction.co.zw">info@dewdropconstruction.co.zw</a></p>
+<p>Location: Marondera, Zimbabwe</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>DEW Drop Construction Company © <span id="current-year"></span></p>
+</div>
+</footer>
+
+<script defer src="script.js"></script>
+</body>
+</html>
