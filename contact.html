@@ -1,162 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact Us - DEW Drop Construction Company</title>
-<link href="images/logo(white background).png" rel="icon" type="image/png"/>
-<link href="style.css" rel="stylesheet"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact Us — DEW Drop Construction</title>
+<meta name="description" content="Contact DEW Drop Construction for inquiries, quotes, or consultations. Serving Marondera and beyond with quality construction." />
+<link rel="icon" href="images/logo(white background).png" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* Contact page specific styles */
-.contact-hero {
-  background: url('images/IMG-20251115-WA0008.webp') no-repeat center center/cover;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  border-bottom: 2px solid #eee;
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --muted:#6b7280; --primary:#0b63d6; --accent:#4ea1f3; --dark:#0c1b33;
+  --radius:14px; --space-s:8px; --space-m:16px; --space-l:28px; --space-xl:48px;
+  --max-width:1200px;
 }
 
-#main-content {
-padding: 50px 20px;
-}
+*{box-sizing:border-box;}
+html,body{height:100%; margin:0; font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:linear-gradient(180deg,var(--bg),#eef3f8); color:#111; line-height:1.5;}
+a{color:var(--primary); text-decoration:none;}
+.site{max-width:var(--max-width); margin:0 auto; padding:0 16px;}
 
-form {
-  max-width: 600px;
-  margin: 0 auto 40px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* Header */
+header{
+  position:sticky; top:0; z-index:100; backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.9); border-bottom:1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 6px 20px rgba(7,10,20,0.04);
 }
-
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:12px 0;
 }
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:44px; width:auto; border-radius:10px}
+.brand h1{font-size:1rem; margin:0; color:var(--dark); font-weight:700}
+.brand small{font-size:12px; color:var(--muted); display:block}
 
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #333;
+/* Navigation */
+nav{position:relative;}
+nav ul{
+  display:flex; gap:18px; align-items:center; list-style:none; margin:0; padding:0;
+  transition: max-height 0.3s ease;
 }
+nav a{font-weight:600; color:var(--muted); padding:8px 12px; border-radius:10px; display:block;}
+nav a:hover, nav a[aria-current]{color:var(--dark); background:linear-gradient(90deg, rgba(74,144,226,0.06), rgba(74,144,226,0.02));}
+.menu-btn{display:none; background:transparent; border:0; font-size:1.6rem; cursor:pointer;}
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+/* Hero Section */
+.contact-hero{padding:64px 0; text-align:center; background:linear-gradient(180deg, rgba(11,99,214,0.7), rgba(78,161,243,0.7)), url('images/IMG-20251115-WA0008.webp') center/cover no-repeat; color:#fff;}
+.contact-hero .section-title{font-size:2rem; margin-bottom:12px;}
+.contact-hero .section-subtitle{font-size:1.1rem; color:#e0e0e0;}
+
+/* Sections */
+section{margin:48px 0}
+h2,h3{color:var(--dark); margin-bottom:16px}
+p{color:var(--muted); margin-bottom:16px}
+
+/* Contact Form */
+.contact-form{
+  max-width:600px; margin:0 auto; background:var(--card); padding:30px;
+  border-radius:var(--radius); box-shadow:0 12px 30px rgba(12,27,51,0.06);
 }
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #007acc;
-  outline: none;
+.contact-form .form-group{margin-bottom:20px;}
+.contact-form label{display:block; font-weight:600; margin-bottom:6px;}
+.contact-form input, .contact-form textarea{
+  width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;
+  font-size:1rem; transition:border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
+.contact-form input:focus, .contact-form textarea:focus{
+  border-color: var(--primary); outline:none;
+  box-shadow: 0 0 0 3px rgba(74,144,226,0.15);
 }
-
-button.button-primary {
-  display: inline-block;
-  background-color: #007acc;
-  color: #fff;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.contact-form textarea{min-height:160px; resize:vertical;}
+.button-primary{
+  background: linear-gradient(90deg,var(--primary),var(--accent)); color:#fff;
+  padding:12px 25px; border:none; border-radius:12px; font-weight:700;
+  cursor:pointer; transition: opacity 0.3s, transform 0.2s;
 }
+.button-primary:hover{opacity:0.95; transform: translateY(-2px);}
 
-button.button-primary:hover {
-  background-color: #005fa3;
-}
+.contact-info{text-align:center; margin-top:32px; font-size:0.95rem; color:var(--muted);}
+.contact-info a{color:var(--primary);}
 
-.contact-info {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.contact-info a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
+/* Responsive */
+@media(max-width:900px){
+  nav ul{flex-direction:column; width:100%; max-height:0; overflow:hidden; background:var(--card); border-radius:10px; box-shadow:0 12px 30px rgba(12,27,51,0.04);}
+  nav ul.show{max-height:500px;}
+  nav li{width:100%;}
+  nav a{padding:12px 16px;}
+  .menu-btn{display:block;}
 }
 </style>
 </head>
-<body>
-<a class="skip-to-content" href="#main-content">Skip to main content</a>
 
+<body>
 <header>
-<div class="container">
-<div id="branding">
-<img src="images/logo(transparent backgroung).png" alt="DEW Drop Construction Logo" style="height:50px; margin-right:10px;"/>
-<h1><span class="highlight">DEW Drop</span> Construction</h1>
+<div class="site nav-inner">
+<div class="brand">
+<img src="images/logo(transparent backgroung).png" alt="DEW Drop logo" />
+<div>
+<h1>DEW Drop Construction</h1>
+<small>Marondera • Trusted local builder</small>
+</div>
 </div>
 <nav aria-label="Main navigation">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li class="current"><a href="contact.html">Contact</a></li>
+<button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+<ul id="mobile-nav" role="menubar">
+<li role="none"><a role="menuitem" href="index.html">Home</a></li>
+<li role="none"><a role="menuitem" href="about.html">About</a></li>
+<li role="none"><a role="menuitem" href="services.html">Services</a></li>
+<li role="none"><a role="menuitem" href="contact.html" aria-current="page">Contact</a></li>
 </ul>
 </nav>
 </div>
 </header>
 
-<section class="contact-hero" id="page-hero">
-<div class="container">
-<h1>Get in Touch</h1>
-<p>We're here to help with any questions you may have.</p>
-</div>
+<main class="site">
+<section class="contact-hero reveal">
+<h2 class="section-title">Get in Touch</h2>
+<p class="section-subtitle">We're here to help with any questions or construction inquiries.</p>
 </section>
 
-<section id="main-content">
-<div class="container">
-<h2 style="text-align:center; margin-bottom:30px;">Contact Us</h2>
-
-<form action="https://formspree.io/f/xovywjne" method="POST">
+<section class="reveal">
+<h2>Contact Us</h2>
+<form class="contact-form" action="https://formspree.io/f/xovywjne" method="POST">
 <div class="form-group">
-<label for="name">Name:</label>
-<input id="name" name="name" type="text" placeholder="Your Name" required/>
+<label for="name">Name</label>
+<input id="name" name="name" type="text" placeholder="Your Name" required>
 </div>
-
 <div class="form-group">
-<label for="email">Email:</label>
-<input id="email" name="email" type="email" placeholder="your.email@example.com" required/>
+<label for="email">Email</label>
+<input id="email" name="email" type="email" placeholder="your.email@example.com" required>
 </div>
-
 <div class="form-group">
-<label for="message">Message:</label>
+<label for="message">Message</label>
 <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
 </div>
-
-<button type="submit" class="button button-primary">Send Message</button>
+<button type="submit" class="button-primary">Send Message</button>
 </form>
 
 <div class="contact-info">
 <p>Phone: <a href="tel:+263716988241">+263 71 6988241</a> | Email: <a href="mailto:info@dewdropconstruction.co.zw">info@dewdropconstruction.co.zw</a></p>
 <p>Location: Marondera, Zimbabwe</p>
 </div>
-</div>
 </section>
+</main>
 
 <footer>
-<div class="container">
-<p>DEW Drop Construction Company © <span id="current-year"></span></p>
+<div style="text-align:center; padding:26px 0; color:var(--muted)">
+DEW Drop Construction © <span id="year"></span> • Built with care
 </div>
 </footer>
 
-<script defer src="script.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// IntersectionObserver reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+  })
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
+// Hamburger menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navUl = document.getElementById('mobile-nav');
+menuBtn.addEventListener('click', () => {
+  const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+  menuBtn.setAttribute('aria-expanded', !expanded);
+  navUl.classList.toggle('show');
+});
+</script>
 </body>
 </html>

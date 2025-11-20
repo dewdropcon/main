@@ -2,49 +2,128 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About Us - DEW Drop Construction Company</title>
-<link rel="icon" href="images/logo(white background).png" type="image/png" />
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<a class="skip-to-content" href="#main-content">Skip to main content</a>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About Us — DEW Drop Construction</title>
+<meta name="description" content="Learn about DEW Drop Construction, our story, founders, and values. Serving Marondera and beyond with quality construction." />
+<link rel="icon" href="images/logo(white background).png" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<header class="header-fade">
-<div class="container">
-<div id="branding" class="branding-animate">
-<img src="images/logo(transparent backgroung).png" alt="DEW Drop Construction Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;" />
-<h1><span class="highlight">DEW Drop</span> Construction</h1>
+<style>
+:root{
+	--bg:#f5f7fb; --card:#ffffff; --muted:#6b7280; --primary:#0b63d6; --accent:#4ea1f3; --dark:#0c1b33;
+	--radius:14px; --space-s:8px; --space-m:16px; --space-l:28px; --space-xl:48px;
+	--max-width:1200px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%; margin:0; font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:linear-gradient(180deg,var(--bg),#eef3f8); color:#111; line-height:1.5;}
+a{color:var(--primary); text-decoration:none;}
+.site{max-width:var(--max-width); margin:0 auto; padding:0 16px;}
+
+/* Header */
+header{
+	position:sticky; top:0; z-index:100; backdrop-filter: blur(6px);
+	background: rgba(255,255,255,0.9); border-bottom:1px solid rgba(15,23,42,0.08);
+	box-shadow: 0 6px 20px rgba(7,10,20,0.04);
+}
+.nav-inner{
+	display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:12px 0;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:44px; width:auto; border-radius:10px}
+.brand h1{font-size:1rem; margin:0; color:var(--dark); font-weight:700}
+.brand small{font-size:12px; color:var(--muted); display:block}
+
+/* Navigation */
+nav{position:relative;}
+nav ul{
+	display:flex; gap:18px; align-items:center; list-style:none; margin:0; padding:0;
+	transition: max-height 0.3s ease;
+}
+nav a{font-weight:600; color:var(--muted); padding:8px 12px; border-radius:10px; display:block;}
+nav a:hover, nav a[aria-current]{color:var(--dark); background:linear-gradient(90deg, rgba(74,144,226,0.06), rgba(74,144,226,0.02));}
+.menu-btn{display:none; background:transparent; border:0; font-size:1.6rem; cursor:pointer;}
+
+/* Hero Section */
+.about-hero{padding:64px 0; text-align:center}
+.about-hero .section-title{font-size:2rem; margin-bottom:12px}
+.about-hero .section-subtitle{font-size:1.1rem; color:var(--muted)}
+
+/* Sections */
+section{margin:48px 0}
+h2,h3{color:var(--dark); margin-bottom:16px}
+p{color:var(--muted); margin-bottom:16px}
+
+/* Team & Values */
+.team-grid, .values-grid{display:grid; gap:18px; grid-template-columns:repeat(2,1fr)}
+.team-card, .value-card{background:var(--card); padding:20px; border-radius:var(--radius); box-shadow:0 12px 30px rgba(12,27,51,0.04); text-align:center; transition:transform .35s ease}
+.team-card:hover, .value-card:hover{transform:translateY(-6px); box-shadow:0 20px 50px rgba(12,27,51,0.08)}
+
+.team-card img{
+	width:100%; height:auto; object-fit:contain; border-radius:12px; margin-bottom:12px; max-height:320px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+	.team-grid, .values-grid{grid-template-columns:1fr;}
+}
+
+@media(max-width:768px){
+	.menu-btn{display:block;}
+	nav ul{
+		flex-direction:column;
+		width:100%;
+		max-height:0;
+		overflow:hidden;
+		background:var(--card);
+		border-radius:10px;
+		box-shadow:0 12px 30px rgba(12,27,51,0.04);
+	}
+	nav ul.show{max-height:500px;}
+	nav li{width:100%;}
+	nav a{padding:12px 16px;}
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="site nav-inner">
+<div class="brand">
+<img src="images/logo(transparent backgroung).png" alt="DEW Drop logo" />
+<div>
+<h1>DEW Drop Construction</h1>
+<small>Marondera • Trusted local builder</small>
 </div>
-<nav aria-label="Main navigation" class="nav-slide">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li class="current"><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
+</div>
+<nav aria-label="Main navigation">
+<button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+<ul id="mobile-nav" role="menubar">
+<li role="none"><a role="menuitem" href="index.html">Home</a></li>
+<li role="none"><a role="menuitem" href="about.html" aria-current="page">About</a></li>
+<li role="none"><a role="menuitem" href="services.html">Services</a></li>
+<li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
 </ul>
 </nav>
 </div>
 </header>
 
-<main id="main-content">
-
-<!-- Hero / Banner Section -->
-<section class="about-hero morph-scroll">
-<div class="container">
-<h2 class="section-title reveal-up">Our Story, Our Legacy</h2>
-<p class="section-subtitle reveal-up">A family-built company driven by passion, skill, and generations of craftsmanship</p>
-</div>
+<main class="site">
+<!-- Hero / About Banner -->
+<section class="about-hero reveal">
+<h2 class="section-title">Our Story, Our Legacy</h2>
+<p class="section-subtitle">A family-built company driven by passion, skill, and generations of craftsmanship</p>
 </section>
 
-<!-- About Section -->
-<section class="container about-section reveal-up">
+<!-- About Details -->
+<section class="reveal">
 <h2>About DEW Drop Construction</h2>
 <p>
-DEW Drop Construction is more than just a company — it is a family legacy shaped through years of experience, dedication, and craftsmanship. Based in Marondera, Zimbabwe, we proudly deliver top-tier construction services including painting, plumbing, tiling, renovations, and general building work.
+DEW Drop Construction is more than just a company – it is a family legacy shaped through years of experience, dedication, and craftsmanship. Based in Marondera, Zimbabwe, we proudly deliver top-tier construction services including painting, plumbing, tiling, renovations, and general building work.
 </p>
 <p>
-The company was founded by two brothers: <strong>Kevin Mutero</strong>, the elder brother known for his leadership, precision, and deep technical knowledge, and <strong>Blessing Mutero</strong>, the younger brother whose creativity and innovative problem-solving elevate every project. Their journey began long before DEW Drop was established — they were trained hands-on by their father, who taught them practical construction techniques, discipline, and pride in craftsmanship.
+The company was founded by two brothers: <strong>Kevin Mutero</strong>, the elder brother known for his leadership, precision, and deep technical knowledge, and <strong>Blessing Mutero</strong>, the younger brother whose creativity and innovative problem-solving elevate every project. Their journey began long before DEW Drop was established – they were trained hands-on by their father, who taught them practical construction techniques, discipline, and pride in craftsmanship.
 </p>
 <p>
 Today, Kevin and Blessing carry that legacy forward with modern techniques, intuitive design thinking, and a commitment to innovation. Their combined strengths make DEW Drop Construction a company rooted in tradition but built for the future.
@@ -52,30 +131,26 @@ Today, Kevin and Blessing carry that legacy forward with modern techniques, intu
 </section>
 
 <!-- Team Section -->
-<section class="team-section morph-scroll">
-<div class="container">
-<h2 class="section-title reveal-up">Meet the Founders</h2>
-
+<section class="reveal">
+<h3>Meet the Founders</h3>
 <div class="team-grid">
-<div class="team-card reveal-up">
+<div class="team-card">
 <img src="images_webp/man_at_work(one of the founders)-320.webp" alt="Kevin Mutero" />
-<h3>Kelvin Mutero</h3>
+<h3>Kevin Mutero</h3>
 <p>The elder brother and master craftsman. Kevin oversees structural work, planning, and quality control, ensuring every project meets professional standards.</p>
 </div>
 
-<div class="team-card reveal-up">
+<div class="team-card">
 <img src="images_webp/worker_after_solar_gyser_install-320.webp" alt="Blessing Mutero" />
 <h3>Blessing Mutero</h3>
 <p>The younger brother and creative builder. Blessing specializes in detail-oriented work, innovative designs, and modern construction solutions.</p>
 </div>
 </div>
-</div>
 </section>
 
 <!-- Values Section -->
-<section class="values-section reveal-up">
-<div class="container">
-<h2 class="section-title">Our Core Values</h2>
+<section class="reveal">
+<h3>Our Core Values</h3>
 <div class="values-grid">
 <div class="value-card">
 <h3>Family Legacy</h3>
@@ -94,17 +169,34 @@ Today, Kevin and Blessing carry that legacy forward with modern techniques, intu
 <p>Modern techniques, creative solutions, and intuitive building approaches.</p>
 </div>
 </div>
-</div>
 </section>
-
 </main>
 
-<footer class="footer-fade">
-<div class="container">
-<p>DEW Drop Construction Company © <span id="current-year"></span></p>
+<footer>
+<div style="text-align:center; padding:26px 0; color:var(--muted)">
+DEW Drop Construction © <span id="year"></span> • Built with care
 </div>
 </footer>
 
-<script defer src="script.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// IntersectionObserver reveal
+const io = new IntersectionObserver((entries)=>{
+	entries.forEach(e=>{
+		if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+	})
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
+// Hamburger menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navUl = document.getElementById('mobile-nav');
+menuBtn.addEventListener('click', () => {
+	const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+	menuBtn.setAttribute('aria-expanded', !expanded);
+	navUl.classList.toggle('show');
+});
+</script>
 </body>
 </html>

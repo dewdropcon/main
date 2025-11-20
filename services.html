@@ -1,54 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Services - DEW Drop Construction Company</title>
-<link href="images/logo(white background).png" rel="icon" type="image/png"/>
-<link href="style.css" rel="stylesheet"/>
-</head>
-<body>
-<a class="skip-to-content" href="#main-content">Skip to main content</a>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Services — DEW Drop Construction</title>
+<meta name="description" content="Explore the comprehensive construction services offered by DEW Drop Construction — painting, plumbing, tiling, general construction, bathroom renovations, and geyser installations." />
+<link rel="icon" href="images/logo(white background).png" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<style>
+:root{
+	--bg:#f5f7fb; --card:#ffffff; --muted:#6b7280; --primary:#0b63d6; --accent:#4ea1f3; --dark:#0c1b33;
+	--radius:14px; --space-s:8px; --space-m:16px; --space-l:28px; --space-xl:48px;
+	--max-width:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:linear-gradient(180deg,var(--bg),#eef3f8); color:#111; line-height:1.5;}
+a{color:var(--primary); text-decoration:none;}
+.site{max-width:var(--max-width); margin:0 auto; padding:0 16px;}
+
+/* Header */
+header{
+	position:sticky; top:0; z-index:100; backdrop-filter: blur(6px);
+	background: rgba(255,255,255,0.9); border-bottom:1px solid rgba(15,23,42,0.08);
+	box-shadow: 0 6px 20px rgba(7,10,20,0.04);
+}
+.nav-inner{
+	display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:12px 0;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{height:44px; width:auto; border-radius:10px}
+.brand h1{font-size:1rem; margin:0; color:var(--dark); font-weight:700}
+.brand small{font-size:12px; color:var(--muted); display:block}
+
+/* Navigation */
+nav{position:relative;}
+nav ul{
+	display:flex; gap:18px; align-items:center; list-style:none; margin:0; padding:0;
+	transition: max-height 0.3s ease;
+}
+nav a{font-weight:600; color:var(--muted); padding:8px 12px; border-radius:10px; display:block;}
+nav a:hover, nav a[aria-current]{color:var(--dark); background:linear-gradient(90deg, rgba(74,144,226,0.06), rgba(74,144,226,0.02));}
+.menu-btn{
+	display:none; background:transparent; border:0; font-size:1.6rem; cursor:pointer;
+}
+
+/* Hero Section */
+.services-hero{padding:64px 0; text-align:center}
+.services-hero h1{font-size:2.2rem; margin-bottom:12px}
+.services-hero p{font-size:1.1rem; color:var(--muted)}
+
+/* Services Grid */
+.service-category{
+	display:grid; grid-template-columns:1fr 2fr; gap:24px;
+	background:var(--card); border-radius:var(--radius);
+	box-shadow:0 12px 30px rgba(12,27,51,0.04);
+	margin-bottom:28px; overflow:hidden; transition:transform .35s ease;
+}
+.service-category:hover{transform:translateY(-6px); box-shadow:0 20px 50px rgba(12,27,51,0.08)}
+.service-category img{
+	width:100%; height:auto; object-fit:contain;
+}
+.service-details{padding:20px}
+.service-details h3{margin-top:0; color:var(--dark)}
+.service-details p{color:var(--muted)}
+.service-details ul{margin:12px 0 16px 16px; color:var(--muted)}
+.button{
+	display:inline-block; padding:12px 20px; border-radius:12px; font-weight:700; cursor:pointer; border:0;
+	text-align:center; text-decoration:none;
+}
+.button-primary{background:linear-gradient(90deg,var(--primary),var(--accent)); color:#fff; box-shadow:0 8px 24px rgba(11,99,214,0.18)}
+.button-primary:hover{opacity:0.95}
+
+/* CTA Section */
+.cta-section{background:linear-gradient(90deg,var(--primary),var(--accent)); color:white; padding:40px; border-radius:18px; text-align:center; margin-bottom:48px}
+.cta-section h2{margin-bottom:12px}
+.cta-section p{margin-bottom:18px}
+
+/* Responsive */
+@media(max-width:900px){
+	.service-category{grid-template-columns:1fr;}
+}
+
+@media(max-width:768px){
+	.menu-btn{display:block;}
+	nav ul{
+		flex-direction:column;
+		width:100%;
+		max-height:0;
+		overflow:hidden;
+		background:var(--card);
+		border-radius:10px;
+		box-shadow:0 12px 30px rgba(12,27,51,0.04);
+	}
+	nav ul.show{max-height:500px;}
+	nav li{width:100%;}
+	nav a{padding:12px 16px;}
+}
+</style>
+</head>
+
+<body>
 <header>
-<div class="container">
-<div id="branding">
-<img src="images/logo(transparent backgroung).png" alt="DEW Drop Construction Logo" style="height:50px; margin-right:10px;"/>
-<h1><span class="highlight">DEW Drop</span> Construction</h1>
+<div class="site nav-inner">
+<div class="brand">
+<img src="images/logo(transparent backgroung).png" alt="DEW Drop logo" />
+<div>
+<h1>DEW Drop Construction</h1>
+<small>Marondera • Trusted local builder</small>
+</div>
 </div>
 <nav aria-label="Main navigation">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li class="current"><a href="services.html">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
+<button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+<ul id="mobile-nav" role="menubar">
+<li role="none"><a role="menuitem" href="index.html">Home</a></li>
+<li role="none"><a role="menuitem" href="about.html">About</a></li>
+<li role="none"><a role="menuitem" href="services.html" aria-current="page">Services</a></li>
+<li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
 </ul>
 </nav>
 </div>
 </header>
 
-<section class="services-hero" id="page-hero">
-<div class="container">
+<main class="site">
+<!-- Hero -->
+<section class="services-hero reveal">
 <h1>Our Comprehensive Services</h1>
 <p>Building Dreams, One Project at a Time – Discover What We Can Do For You.</p>
-</div>
 </section>
 
-<section id="main-content">
-<div class="container">
+<!-- Introduction -->
+<section class="reveal">
 <h2>Dedicated to Quality Craftsmanship</h2>
 <p>At DEW Drop Construction, we pride ourselves on delivering a wide array of construction services with unparalleled quality and attention to detail. Our experienced team is equipped to handle projects of all sizes, ensuring durable, aesthetically pleasing, and functional results that exceed your expectations.</p>
 <p>Explore our core services below and see how we can bring your vision to life.</p>
-</div>
 </section>
 
-<section id="detailed-services">
+<!-- Detailed Services -->
+<section id="detailed-services" class="reveal">
 <!-- Painting -->
 <div class="service-category">
-<img src="images_webp/excellent_paint_job.webp" 
-srcset="images_webp/excellent_paint_job-320.webp 320w, images_webp/excellent_paint_job-640.webp 640w, images_webp/excellent_paint_job-1280.webp 1280w"
-sizes="(max-width:600px) 320px, (max-width:1200px) 640px, 1280px"
-alt="Painting Services"/>
+<img src="images_webp/excellent_paint_job.webp" alt="Painting Services" />
 <div class="service-details">
 <h3>Painting Services</h3>
 <p>Revitalize your property with our professional interior and exterior painting services. Smooth, long-lasting finishes with premium paints.</p>
@@ -64,10 +158,7 @@ alt="Painting Services"/>
 
 <!-- Plumbing -->
 <div class="service-category">
-<img src="images_webp/drilling_walls_for_pipes.webp"
-srcset="images_webp/drilling_walls_for_pipes-320.webp 320w, images_webp/drilling_walls_for_pipes-640.webp 640w, images_webp/drilling_walls_for_pipes-1280.webp 1280w"
-sizes="(max-width:600px) 320px, (max-width:1200px) 640px, 1280px"
-alt="Plumbing Services"/>
+<img src="images_webp/drilling_walls_for_pipes.webp" alt="Plumbing Services" />
 <div class="service-details">
 <h3>Plumbing Solutions</h3>
 <p>Certified plumbers delivering efficient and reliable water systems for your home or business.</p>
@@ -82,12 +173,12 @@ alt="Plumbing Services"/>
 </div>
 </div>
 
+<!-- Other services omitted for brevity, keep same structure -->
+
+
 <!-- Tiling -->
 <div class="service-category">
-<img src="images_webp/pan_installation.webp"
-srcset="images_webp/pan_installation-320.webp 320w, images_webp/pan_installation-640.webp 640w, images_webp/pan_installation-1280.webp 1280w"
-sizes="(max-width:600px) 320px, (max-width:1200px) 640px, 1280px"
-alt="Tiling Services"/>
+<img src="images_webp/pan_installation.webp" alt="Tiling Services" />
 <div class="service-details">
 <h3>Tiling Expertise</h3>
 <p>Expertly installed tiles for kitchens, bathrooms, floors, and walls. Durable and elegant finishes.</p>
@@ -103,10 +194,7 @@ alt="Tiling Services"/>
 
 <!-- General Construction -->
 <div class="service-category">
-<img src="images_webp/exquisite_brick_dressing.webp"
-srcset="images_webp/exquisite_brick_dressing-320.webp 320w, images_webp/exquisite_brick_dressing-640.webp 640w, images_webp/exquisite_brick_dressing-1280.webp 1280w"
-sizes="(max-width:600px) 320px, (max-width:1200px) 640px, 1280px"
-alt="General Construction"/>
+<img src="images_webp/exquisite_brick_dressing.webp" alt="General Construction" />
 <div class="service-details">
 <h3>General Construction</h3>
 <p>From new builds to renovations, we ensure robust and lasting results for all construction projects.</p>
@@ -122,10 +210,7 @@ alt="General Construction"/>
 
 <!-- Bathroom Renovations -->
 <div class="service-category">
-<img src="images_webp/classy_tub_install.webp"
-srcset="images_webp/classy_tub_install-320.webp 320w, images_webp/classy_tub_install-640.webp 640w, images_webp/classy_tub_install-1280.webp 1280w"
-sizes="(max-width:600px) 320px, (max-width:1200px) 640px, 1280px"
-alt="Bathroom Renovations"/>
+<img src="images_webp/classy_tub_install.webp" alt="Bathroom Renovations" />
 <div class="service-details">
 <h3>Bathroom Renovations</h3>
 <p>Transform your bathroom into a modern, functional, and aesthetic space.</p>
@@ -141,10 +226,7 @@ alt="Bathroom Renovations"/>
 
 <!-- Geyser Installations -->
 <div class="service-category">
-<img src="images_webp/man_on_roof_fitting_gyser.webp"
-srcset="images_webp/man_on_roof_fitting_gyser-320.webp 320w, images_webp/man_on_roof_fitting_gyser-640.webp 640w, images_webp/man_on_roof_fitting_gyser-1280.webp 1280w"
-sizes="(max-width:600px) 320px, (max-width:1200px) 640px, 1280px"
-alt="Geyser Installations"/>
+<img src="images_webp/man_on_roof_fitting_gyser.webp" alt="Geyser Installations" />
 <div class="service-details">
 <h3>Geyser Installations</h3>
 <p>Professional geyser and solar water heater installation, repair, and maintenance.</p>
@@ -159,20 +241,39 @@ alt="Geyser Installations"/>
 </div>
 </section>
 
-<section class="cta-section" id="services-cta">
-<div class="container">
+<!-- CTA -->
+<section class="cta-section reveal">
 <h2>Ready to Enhance Your Property?</h2>
 <p>Contact DEW Drop Construction today for a free consultation and a detailed quote for your next project.</p>
 <a href="contact.html" class="button button-primary">Get a Free Quote</a>
-</div>
 </section>
+</main>
 
 <footer>
-<div class="container">
-<p>DEW Drop Construction Company © <span id="current-year"></span></p>
+<div style="text-align:center; padding:26px 0; color:var(--muted)">
+DEW Drop Construction © <span id="year"></span> • Built with care
 </div>
 </footer>
 
-<script defer src="script.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// IntersectionObserver reveal animation
+const io = new IntersectionObserver((entries)=>{
+	entries.forEach(e=>{
+		if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+	});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
+// Hamburger menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+const navUl = document.getElementById('mobile-nav');
+menuBtn.addEventListener('click', () => {
+	const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+	menuBtn.setAttribute('aria-expanded', !expanded);
+	navUl.classList.toggle('show');
+});
+</script>
 </body>
 </html>
